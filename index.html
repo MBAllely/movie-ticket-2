@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <title>Groovy Movies</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Groovy Movies</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+
+          <form id="ticket-order">
+            <div class="form-group">
+              <label for="movie-name">Feast your eyes 'pon: </label>
+              <select id="movie-name">
+                <option value="movie1">Rabbi's Cat</option>
+                <option value="movie2">Tokyo Godfathers</option>
+                <option value="movie3">The Man Who Fell to Earth</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="time-of-day">When do you want to go?</label>
+              <select id="time-of-day">
+                <option value="regular">After 5pm</option>
+                <option value="matinee">Daytime</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">How old are you?</label>
+              <select id="age">
+                <option value="discounted-age">Under 12</option>
+                <option value="adult">I am a mature adult, thank you.</option>
+                <option value="discounted-age">EH? SPEAK UP!</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit!</button>
+          </form>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="result">
+            <span id="result"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
