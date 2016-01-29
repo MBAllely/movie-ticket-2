@@ -1,23 +1,22 @@
-function Ticket (movieName, time, discountedAge) {
+function Ticket (movieName, time, age) {
   this.movieName = movieName;
   this.time = time;
-  this.discountedAge = discountedAge;
+  this.age = age;
 }
 
 Ticket.prototype.fullDetails = function () {
-  return this.movieName + " " + this.time;
+  return this.movieName + ", " + this.time + " showing,";
 };
 
 
-Ticket.prototype.price = function() {
-  var price = 10
-
-  if (this.time === "matinee") { //determines if showtime discount applies
-    price -= 2;
+Ticket.prototype.pricer = function() {
+  var price = 10;
+  if (this.age != "adult") {
+    price -=2;
   }
 
-  if (this.discountedAge = true) { //determines if age discount applies
-    price -= 2;
+  if (this.time != "regular") {
+    price -=2;
   }
 
   return price;
@@ -25,20 +24,15 @@ Ticket.prototype.price = function() {
 
 
 $(document).ready(function() {
-  ("form#ticket-order").submit(function(event) {
+  $("form#ticket-order").submit(function(event) {
     event.preventDefault();
 
-    var inputtedAge = $("input#age").val();
-    var inputtedMovie = $("input#movie-name").val();
-    var inputtedTime = $("input#time-of-day").val();
+    var inputtedMovie = $("select#movie-name").val();
+    var inputtedTime = $("select#time-of-day").val();
+    var inputtedAge = $("select#age").val();
+    var userMovie = new Ticket(inputtedMovie, inputtedTime, inputtedAge);
+    $(".result").show();
+    $("#result").text(userMovie.fullDetails() + " $" + userMovie.pricer() + ".00");
+  });
 
-    var discountedAge;
-
-    if (inputtedAge === "discounted-age") {
-      discountedAge = true;
-    }
-
-    newTicket = new Ticket()
-  })
-
-})
+});
