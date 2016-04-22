@@ -1,6 +1,6 @@
 # Movie Ticket 2
 
-### By _**Marika Allely and Jon Sweeney**_
+### By _**Marika Allely**_
 
 ## Description
 
